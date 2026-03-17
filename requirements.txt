@@ -1,0 +1,6 @@
+geopandas>=1.0
+pandas>=2.2
+folium>=0.18
+mapclassify>=2.8
+jupyterlab>=4.0
+notebook>=7.0
