@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Preferenze PD a Roma</title>
+  <title>Preferenze CSX Roma 2021</title>
   <style>
     :root {
-      --bg: #f4efe5;
-      --paper: rgba(255, 252, 246, 0.92);
-      --ink: #18222f;
-      --muted: #5c6773;
-      --line: rgba(24, 34, 47, 0.12);
-      --accent: #b21e35;
-      --accent-2: #1f6f8b;
-      --shadow: 0 24px 60px rgba(24, 34, 47, 0.16);
+      --bg: #f7f7f2;
+      --paper: rgba(255, 253, 248, 0.82);
+      --ink: #213547;
+      --muted: #536779;
+      --line: rgba(24, 59, 77, 0.12);
+      --accent: #b42318;
+      --shadow: 0 28px 70px rgba(33, 53, 71, 0.12);
     }
 
     * {
@@ -22,12 +21,13 @@
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(178, 30, 53, 0.12), transparent 30%),
-        radial-gradient(circle at top right, rgba(31, 111, 139, 0.14), transparent 28%),
-        linear-gradient(180deg, #efe6d6 0%, var(--bg) 40%, #f9f5ee 100%);
+        radial-gradient(circle at 15% 18%, rgba(15, 118, 110, 0.14), transparent 26%),
+        radial-gradient(circle at 88% 12%, rgba(180, 35, 24, 0.12), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(219, 234, 254, 0.46), transparent 34%),
+        linear-gradient(180deg, #fffef9 0%, #f7fafc 48%, #f6f7f2 100%);
     }
 
     body.locked {
@@ -35,87 +35,98 @@
     }
 
     .shell {
-      width: min(1200px, calc(100% - 32px));
+      width: min(1240px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 32px 0 56px;
+      padding: 28px 0 56px;
     }
 
     .hero {
+      position: relative;
+      overflow: hidden;
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 24px;
+      border-radius: 30px;
       box-shadow: var(--shadow);
-      padding: 28px;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(16px);
+      padding: 34px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -80px auto auto -70px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(219, 234, 254, 0.9), rgba(219, 234, 254, 0));
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -30px;
+      width: 280px;
+      height: 180px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(180, 35, 24, 0.05));
+      filter: blur(2px);
+      transform: rotate(-12deg);
+      pointer-events: none;
     }
 
     .eyebrow {
-      margin: 0 0 10px;
+      position: relative;
+      margin: 0 0 12px;
       font-size: 12px;
-      letter-spacing: 0.18em;
+      font-weight: 700;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--accent);
     }
 
     h1 {
+      position: relative;
       margin: 0;
-      font-size: clamp(2.2rem, 4vw, 4.4rem);
-      line-height: 0.95;
-      font-weight: 700;
-      max-width: 10ch;
+      max-width: 11ch;
+      font-size: clamp(2.4rem, 4.5vw, 5rem);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
     }
 
     .lead {
+      position: relative;
+      max-width: 75ch;
       margin: 18px 0 0;
-      max-width: 72ch;
-      font-size: 1.05rem;
-      line-height: 1.65;
       color: var(--muted);
-    }
-
-    .notes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .note {
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.65);
-      font-size: 0.95rem;
-      line-height: 1.5;
+      font-size: 1.06rem;
+      line-height: 1.7;
     }
 
     .maps {
       margin-top: 24px;
       display: grid;
-      gap: 20px;
+      gap: 22px;
     }
 
     .map-card {
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
       overflow: hidden;
+      background: rgba(255, 252, 254, 0.8);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
     }
 
     .map-copy {
-      padding: 18px 20px 10px;
+      padding: 20px 22px 12px;
     }
 
     .map-copy h2 {
-      margin: 0 0 6px;
-      font-size: 1.4rem;
-    }
-
-    .map-copy p {
       margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
     }
 
     iframe {
@@ -124,32 +135,33 @@
       height: 72vh;
       min-height: 520px;
       border: 0;
-      background: linear-gradient(135deg, rgba(178, 30, 53, 0.05), rgba(31, 111, 139, 0.08));
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.08), transparent 28%),
+        linear-gradient(135deg, rgba(255, 253, 248, 1), rgba(240, 249, 255, 0.95));
     }
 
     .missing {
-      margin: 0 20px 20px;
+      margin: 0 22px 22px;
       padding: 14px 16px;
-      border-radius: 14px;
-      background: rgba(178, 30, 53, 0.08);
-      color: #7f1d1d;
-      border: 1px solid rgba(178, 30, 53, 0.14);
+      border-radius: 16px;
+      background: rgba(180, 35, 24, 0.08);
+      color: #9a3412;
+      border: 1px solid rgba(180, 35, 24, 0.14);
       display: none;
     }
 
     footer {
       margin-top: 22px;
       color: var(--muted);
-      font-size: 0.95rem;
       line-height: 1.6;
     }
 
     code {
-      font-family: "Courier New", monospace;
+      font-family: Consolas, "Courier New", monospace;
       font-size: 0.92em;
-      background: rgba(24, 34, 47, 0.06);
       padding: 2px 5px;
-      border-radius: 4px;
+      border-radius: 6px;
+      background: rgba(33, 53, 71, 0.06);
     }
 
     .gate {
@@ -161,9 +173,9 @@
       justify-content: center;
       padding: 20px;
       background:
-        linear-gradient(180deg, rgba(24, 34, 47, 0.78), rgba(24, 34, 47, 0.88)),
-        radial-gradient(circle at top, rgba(31, 111, 139, 0.25), transparent 35%);
-      backdrop-filter: blur(10px);
+        radial-gradient(circle at top, rgba(15, 118, 110, 0.16), transparent 34%),
+        linear-gradient(180deg, rgba(24, 39, 54, 0.82), rgba(15, 23, 42, 0.92));
+      backdrop-filter: blur(12px);
     }
 
     .gate.hidden {
@@ -171,19 +183,18 @@
     }
 
     .gate-panel {
-      width: min(420px, 100%);
-      background: rgba(255, 252, 246, 0.96);
-      border: 1px solid rgba(24, 34, 47, 0.12);
-      border-radius: 24px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
-      padding: 26px;
+      width: min(430px, 100%);
+      background: rgba(255, 250, 253, 0.94);
+      border: 1px solid rgba(255, 215, 234, 0.28);
+      border-radius: 26px;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
+      padding: 28px;
       text-align: center;
     }
 
     .gate-panel h2 {
       margin: 0 0 10px;
-      font-size: 1.8rem;
-      color: var(--ink);
+      font-size: 1.9rem;
     }
 
     .gate-panel p {
@@ -199,8 +210,8 @@
 
     .gate-form input {
       width: 100%;
-      border: 1px solid rgba(24, 34, 47, 0.18);
-      border-radius: 12px;
+      border: 1px solid rgba(130, 28, 75, 0.18);
+      border-radius: 14px;
       padding: 12px 14px;
       font-size: 1rem;
       background: #fff;
@@ -208,12 +219,12 @@
 
     .gate-form button {
       border: 0;
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 12px 14px;
       font-size: 1rem;
       font-weight: 700;
       color: #fff;
-      background: linear-gradient(135deg, #1f6f8b, #14532d);
+      background: linear-gradient(135deg, #0f766e, #b42318);
       cursor: pointer;
     }
 
@@ -226,13 +237,13 @@
 
     @media (max-width: 760px) {
       .shell {
-        width: min(100% - 20px, 1200px);
-        padding-top: 20px;
+        width: min(100% - 18px, 1240px);
+        padding-top: 18px;
       }
 
       .hero {
-        padding: 22px;
-        border-radius: 20px;
+        padding: 24px;
+        border-radius: 24px;
       }
 
       iframe {
@@ -245,7 +256,7 @@
 <body class="locked">
   <div class="gate" id="gate">
     <div class="gate-panel">
-      <h2>Accesso Riservato</h2>
+      <h2>Accesso riservato</h2>
       <p>Inserisci la password per visualizzare le mappe interattive.</p>
       <form class="gate-form" id="gate-form">
         <input id="gate-password" type="password" placeholder="Password" autocomplete="current-password">
@@ -254,52 +265,42 @@
       <div class="gate-error" id="gate-error"></div>
     </div>
   </div>
+
   <main class="shell">
     <section class="hero">
-      <p class="eyebrow">Roma · Preferenze · Partito Democratico</p>
-      <h1>Mappe interattive delle preferenze PD</h1>
+      <p class="eyebrow">Roma 2021</p>
+      <h1>Preferenze CSX Roma 2021</h1>
       <p class="lead">
-        Queste mappe mostrano la distribuzione territoriale del voto al Partito Democratico nelle sezioni elettorali di Roma.
-        La colorazione usa la percentuale del PD sul totale dei voti di lista, mentre nei popup compaiono i voti alla lista PD e le top 10 preferenze dei consiglieri. In sovrapposizione è presente anche un layer testuale per quartiere con i nomi dei candidati più forti.
+        Mappa delle preferenze per PD e Roma Futura alle ultime elezioni comunali e municipali di Roma.
       </p>
-      <div class="notes">
-        <div class="note">Mappa 1: Roma, elezione comunale 2021, con focus sui consiglieri comunali PD.</div>
-        <div class="note">Mappa 2: zoom sul Municipio III, sempre per il consiglio comunale.</div>
-        <div class="note">Mappa 3: Municipio III, elezione municipale 2021, con focus sui consiglieri municipali PD.</div>
-      </div>
     </section>
 
     <section class="maps">
       <article class="map-card">
         <div class="map-copy">
           <h2>Roma 2021</h2>
-          <p>Coropleta sulla percentuale del PD per sezione e popup con voti di lista PD e top 10 preferenze dei consiglieri comunali.</p>
         </div>
         <iframe src="maps/roma_pd_comune_2021.html" title="Mappa Roma 2021"></iframe>
-        <div class="missing">Il file <code>docs/maps/roma_pd_comune_2021.html</code> non è stato ancora generato. Esegui il notebook <code>notebooks/pd_roma_maps.ipynb</code>.</div>
       </article>
 
       <article class="map-card">
         <div class="map-copy">
           <h2>Municipio III 2021</h2>
-          <p>Focus sul Municipio III, mantenendo il riferimento alla percentuale PD e alle preferenze per il consiglio comunale.</p>
         </div>
         <iframe src="maps/municipio3_pd_comune_2021.html" title="Mappa Municipio III 2021"></iframe>
-        <div class="missing">Il file <code>docs/maps/municipio3_pd_comune_2021.html</code> non è stato ancora generato. Esegui il notebook <code>notebooks/pd_roma_maps.ipynb</code>.</div>
       </article>
 
       <article class="map-card">
         <div class="map-copy">
           <h2>Municipio III: elezione municipale 2021</h2>
-          <p>Coropleta sulla percentuale PD nelle elezioni municipali e popup con voti di lista PD e top 10 preferenze dei consiglieri municipali.</p>
         </div>
-        <iframe src="maps/municipio3_pd_municipio_2021.html" title="Confronto Municipio III"></iframe>
-        <div class="missing">Il file <code>docs/maps/municipio3_pd_municipio_2021.html</code> non è stato ancora generato. Esegui il notebook <code>notebooks/pd_roma_maps.ipynb</code>.</div>
+        <iframe src="maps/municipio3_pd_municipio_2021.html" title="Mappa Municipio III elezione municipale"></iframe>
       </article>
     </section>
 
     <footer>
-      La pagina è pensata per GitHub Pages usando la cartella <code>docs/</code>. Il notebook salva anche CSV di riepilogo in <code>docs/data/</code> per controlli e riuso.
+      La pagina resta pensata per GitHub Pages nella cartella <code>docs/</code>. Gli output tabellari
+      vengono salvati anche in <code>docs/data/</code> per controlli e riuso.
     </footer>
   </main>
 
@@ -336,21 +337,6 @@
       });
     })();
 
-    document.querySelectorAll(".map-card").forEach((card) => {
-      const iframe = card.querySelector("iframe");
-      const warning = card.querySelector(".missing");
-      let loaded = false;
-
-      iframe.addEventListener("load", () => {
-        loaded = true;
-      });
-
-      setTimeout(() => {
-        if (!loaded) {
-          warning.style.display = "block";
-        }
-      }, 2500);
-    });
   </script>
 </body>
 </html>
